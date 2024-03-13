@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=5" name="viewport">
+    <title>IFC&BD Lab</title>
+    <meta content="武频" name="author">
+    <link href="/img/icon.png" rel="shortcut icon">
+    <link href="/css/index.css" rel="stylesheet">
+    <style>
+        .person-container {
+            display: flex;
+            flex-wrap: wrap; /* 允许人物框换行 */
+        }
+
+        .person {
+            display: inline-block;
+            width: calc(100% / 3.3); /* 每行放置三个人物 */
+            box-sizing: border-box; /* 保证宽度包括边框和内边距 */
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* 右侧和下侧阴影 */
+            margin: 10px;
+            transition: transform 0.3s ease; /* 添加过渡效果 */
+        }
+
+        .person:hover {
+            transform: translateY(-5px); /* 添加鼠标悬停时的立体效果 */
+        }
+
+        .person img {
+            width: 100%; /* 图片宽度占满整个父容器 */
+            height: 60%; /* 图片高度为人物介绍框高度的3/5 */
+            object-fit: cover; /* 保持图片长宽比并填充整个容器 */
+            border-top-left-radius: 10px; /* 图片上方圆角 */
+            border-top-right-radius: 10px; /* 图片上方圆角 */
+        }
+
+        .person p {
+            margin: 0;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 1em;
+            padding: 20px 10px 10px;
+        }
+
+        .loc {
+            font-size: 0.8em; /* 缩小字体大小 */
+            opacity: 0.8; /* 设置透明度，使文本虚化 */
+        }
+
+        .description {
+            font-size: 1em;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .person {
+                width: 100%; /* 在小屏幕上，人物介绍框占据整个宽度 */
+            }
+        }
+    </style>
+
+</head>
+<body>
+<header id="page_header">
+    <!-- 头部内容 -->
+    <div class="header_wrap">
+        <div id="blog_name">
+            <a class="blog_title" href="/" id="site-name">IFC&BD Lab</a>
+        </div>
+        <ul class="menus_items">
+            <li class="menus_item">
+                <a class="site-page" href="/lab director/index.html">负责人</a>
+            </li>
+            <li class="menus_item">
+                <a class="site-page" href="/team members/index.html">团队成员</a>
+            </li>
+            <li class="menus_item">
+                <a class="site-page" href="/academic paper/index.html">学术论文</a>
+            </li>
+            <li class="menus_item">
+                <a class="site-page" href="/research project/index.html">科研项目</a>
+            </li>
+            <li class="menus_item">
+                <a class="site-page" href="/teaching work/index.html">教学工作</a>
+            </li>
+            <!--            <li class="menus_item">-->
+            <!--                <a class="site-page" href="/contact us/index.html">联系我们</a>-->
+            <!--            </li>-->
+        </ul>
+    </div>
+</header>
+
+<main id="page_main">
+    <!-- 主体内容 -->
+    <div class="side-card sticky">
+        <div class="card-wrap" itemscope itemtype="http://schema.org/Person">
+            <div class="author-avatar">
+                <img alt="avatar" class="avatar-img" src="/img/武频.jpg">
+            </div>
+            <div class="author-discrip">
+                <h3>武频</h3>
+                <p class="author-bio">教授、博导</p>
+            </div>
+            <div class="author-links">
+                <ul class="social-links">
+                    <li>
+                        <a class="e-social-link" href="mailto:wupin@shu.edu.cn" target="_blank">
+                            <i aria-hidden="true" class="fas fa-envelope-open"></i>
+                            <span>wupin@shu.edu.cn</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="page" itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="page-title">团队成员</h2>
+        <article>
+            <hr/>
+            <h3 id="合作学者"><a class="headerlink" href="#合作学者" title="合作学者"></a>合作学者</h3>
+            <div class="person-container">
+                <div class="person">
+                    <img src="/img/封卫兵.jpg">
+                    <p>
+                        <span class="name">封卫兵</span>
+                        <span class="loc">上海大学</span>
+                    </p>
+                    <p class="description">
+                        描述
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/周丽萍.jpg">
+                    <p>
+                        <span class="name">周丽萍</span>
+                        <span class="loc">上海大学</span>
+                    </p>
+                    <p class="description">
+                        描述
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/Christopher%20C.%20Pain.jpg">
+                    <p>
+                        <span class="name">Christopher C. Pain</span>
+                        <span class="loc">英国帝国理工学院</span>
+                    </p>
+                    <p class="description">
+                        描述
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/Fangxin%20Fang.jpg">
+                    <p>
+                        <span class="name">Fangxin Fang</span>
+                        <span class="loc">英国帝国理工学院</span>
+                    </p>
+                    <p class="description">
+                        描述
+                    </p>
+                </div>
+
+            </div>
+            <hr/>
+
+            <h3 id="在读博士生"><a class="headerlink" href="#在读博士生" title="在读博士生"></a>在读博士生</h3>
+            <div class="person-container">
+                <div class="person">
+                    <img src="/img/杨翌虢.jpg">
+                    <p>
+                        <span class="name">杨翌虢</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+
+                <div class="person">
+                    <img src="/img/武江南.jpg">
+                    <p>
+                        <span class="name">武江南</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+
+            </div>
+            <hr/>
+
+            <h3 id="在读硕士生"><a class="headerlink" href="#在读硕士生" title="在读硕士生"></a>在读硕士生</h3>
+            <div class="person-container">
+                <div class="person">
+                    <img src="/img/张波.jpg">
+                    <p>
+                        <span class="name">张波</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/翁龙杰.jpg">
+                    <p>
+                        <span class="name">翁龙杰</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/刘志涛.jpg">
+                    <p>
+                        <span class="name">刘志涛</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/许立基.jpg">
+                    <p>
+                        <span class="name">许立基</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/黄海旺.jpg">
+                    <p>
+                        <span class="name">黄海旺</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/秦之屹.jpg">
+                    <p>
+                        <span class="name">秦之屹</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/朱宇飞.jpg">
+                    <p>
+                        <span class="name">朱宇飞</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/屠泽凯.jpg">
+                    <p>
+                        <span class="name">屠泽凯</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/王玉波.jpg">
+                    <p>
+                        <span class="name">王玉波</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/邹伟豪.jpg">
+                    <p>
+                        <span class="name">邹伟豪</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        自我介绍
+                    </p>
+                </div>
+
+            </div>
+
+            <hr/>
+
+            <h3 id="在读本科生"><a class="headerlink" href="#在读本科生" title="在读本科生"></a>在读本科生</h3>
+            <ul>
+                <li>王越</li>
+                <li>徐王嘉</li>
+            </ul>
+            <hr/>
+
+            <!--            <h3 id="已毕业博士生"><a href="#已毕业博士生" class="headerlink" title="已毕业博士生"></a>已毕业博士生</h3>-->
+            <!--            <div class="person-container">-->
+            <!--                <div class="person">-->
+            <!--                    <img src="/img/武江南.jpg">-->
+            <!--                    <p>-->
+            <!--                        <span class="name">武江南</span>-->
+            <!--                        <span class="loc">20？？</span>-->
+            <!--                    </p>-->
+            <!--                    <p class="description">-->
+            <!--                        自我介绍-->
+            <!--                    </p>-->
+            <!--                </div>-->
+
+            <!--            </div>-->
+            <!--            <hr/>-->
+
+            <h3 id="已毕业硕士生"><a class="headerlink" href="#已毕业硕士生" title="已毕业硕士生"></a>已毕业硕士生</h3>
+            <div class="person-container">
+                <div class="person">
+                    <img src="/img/李建敦.jpg">
+                    <p>
+                        <span class="name">李建敦</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/刘海恩.jpg">
+                    <p>
+                        <span class="name">刘海恩</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/武伟.jpg">
+                    <p>
+                        <span class="name">武伟</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/朱儒康.jpg">
+                    <p>
+                        <span class="name">朱儒康</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/吕博.jpg">
+                    <p>
+                        <span class="name">吕博</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/李松倍.jpg">
+                    <p>
+                        <span class="name">李松倍</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/高升.jpg">
+                    <p>
+                        <span class="name">高升</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/杨瑒.jpg">
+                    <p>
+                        <span class="name">杨瑒</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/邱为.jpg">
+                    <p>
+                        <span class="name">邱为</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/孙建成.jpg">
+                    <p>
+                        <span class="name">孙建成</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/廖世伟.jpg">
+                    <p>
+                        <span class="name">廖世伟</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/曹啸鹏.jpg">
+                    <p>
+                        <span class="name">曹啸鹏</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/郑徳群.jpg">
+                    <p>
+                        <span class="name">郑徳群</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/陶聪.jpg">
+                    <p>
+                        <span class="name">陶聪</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/颜宏杰.jpg">
+                    <p>
+                        <span class="name">颜宏杰</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/雷志丹.jpg">
+                    <p>
+                        <span class="name">雷志丹</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/罗娟娟.jpg">
+                    <p>
+                        <span class="name">罗娟娟</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/郎佳林.jpg">
+                    <p>
+                        <span class="name">郎佳林</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/陈玮.jpg">
+                    <p>
+                        <span class="name">陈玮</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/周全.jpg">
+                    <p>
+                        <span class="name">周全</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/张霞.jpg">
+                    <p>
+                        <span class="name">张霞</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/常旭婷.jpg">
+                    <p>
+                        <span class="name">常旭婷</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/陆佳雯.jpg">
+                    <p>
+                        <span class="name">陆佳雯</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/王劲东.jpg">
+                    <p>
+                        <span class="name">王劲东</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/潘凯凯.jpg">
+                    <p>
+                        <span class="name">潘凯凯</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/孙俊五.jpg">
+                    <p>
+                        <span class="name">孙俊五</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/张文杰.jpg">
+                    <p>
+                        <span class="name">张文杰</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/邱丰.jpg">
+                    <p>
+                        <span class="name">邱丰</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/袁雯琰.jpg">
+                    <p>
+                        <span class="name">袁雯琰</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+                <div class="person">
+                    <img src="/img/龚思泉.jpg">
+                    <p>
+                        <span class="name">龚思泉</span>
+                        <span class="loc">20？？</span>
+                    </p>
+                    <p class="description">
+                        介绍
+                    </p>
+                </div>
+
+
+            </div>
+            <hr/>
+
+            <h3 id="已毕业本科生"><a class="headerlink" href="#已毕业本科生" title="已毕业本科生"></a>已毕业本科生</h3>
+            <ul>
+                <li>卢嘉轩 2020届本科生，2024年毕业，保研到清华大学</li>
+                <li>许智威 2021届本科生，2025年毕业，保研到清华大学</li>
+            </ul>
+        </article>
+    </div>
+</main>
+
+<footer id="page_footer">
+    <!-- 底部内容 -->
+    <div class="footer_wrap">
+        <a href="https://ifcbd-shu.github.io/" rel="noopener noreferrer" style="text-decoration: none;" target="_blank">
+            <img src="/img/lib-text.png" style="width: 300px">
+        </a>
+        <div style="float:right;">
+            <a href="https://www.shu.edu.cn/" rel="noopener noreferrer" style="text-decoration: none;" target="_blank">
+                <img src="/img/shu.svg" style="width: 160px">
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- JS 脚本在这里 -->
+<script>
+    function addErrorHandling() {
+        // 获取所有类名为 .person 的元素
+        var persons = document.querySelectorAll('.person');
+
+        // 遍历所有 .person 元素
+        persons.forEach(function (person) {
+            // 获取当前 .person 元素下的图片元素
+            var image = person.querySelector('img');
+
+            // 添加错误处理函数
+            image.addEventListener('error', function () {
+                this.src = '/img/default.webp'; // 替换为默认图片的路径
+            });
+        });
+    }
+
+    // 调用函数
+    addErrorHandling();
+</script>
+
+</body>
+</html>
