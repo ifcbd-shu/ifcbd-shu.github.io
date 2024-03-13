@@ -24,6 +24,17 @@
             transition: transform 0.3s ease; /* 添加过渡效果 */
         }
 
+        .teacher {
+            display: inline-block;
+            width: calc(100% / 2.5); /* 每行放置三个人物 */
+            box-sizing: border-box; /* 保证宽度包括边框和内边距 */
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* 右侧和下侧阴影 */
+            margin: 10px;
+            transition: transform 0.3s ease; /* 添加过渡效果 */
+        }
+
         .person:hover {
             transform: translateY(-5px); /* 添加鼠标悬停时的立体效果 */
         }
@@ -121,7 +132,7 @@
         <h2 class="page-title">团队成员</h2>
         <article>
             <hr/>
-            <h3 id="合作学者"><a class="headerlink" href="#合作学者" title="合作学者"></a>合作学者</h3>
+            <h3 id="合作学者">合作学者</h3>
             <div class="person-container">
                 <div class="person">
                     <img src="/img/封卫兵.jpg">
@@ -143,6 +154,8 @@
                         描述
                     </p>
                 </div>
+            </div>
+            <div class="person-container">
                 <div class="person">
                     <img src="/img/Christopher%20C.%20Pain.jpg">
                     <p>
