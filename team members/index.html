@@ -57,6 +57,43 @@
             color: white;
         }
 
+        /* 模态框的样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         @media screen and (max-width: 768px) {
             .person {
                 width: 100%; /* 在小屏幕上，人物介绍框占据整个宽度 */
@@ -114,6 +151,7 @@
             </div>
         </div>
     </div>
+
     <div class="page" itemscope itemtype="http://schema.org/CreativeWork">
         <h2 class="page-title">团队成员</h2>
         <article>
@@ -121,7 +159,7 @@
             <h3 id="合作学者">合作学者</h3>
             <div class="person-container">
                 <div class="person">
-                    <img src="/static/img/封卫兵.jpg">
+                    <img src="/static/img/封卫兵.jpg" alt="封卫兵">
                     <p>
                         <span class="name">封卫兵</span>
                         <span class="note">上海大学</span>
@@ -131,7 +169,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/周丽萍.jpg">
+                    <img src="/static/img/周丽萍.jpg" alt="周丽萍">
                     <p>
                         <span class="name">周丽萍</span>
                         <span class="note">上海大学</span>
@@ -144,7 +182,7 @@
             <hr/>
             <div class="person-container">
                 <div class="person">
-                    <img src="/static/img/Christopher%20C.%20Pain.jpg">
+                    <img src="/static/img/Christopher%20C.%20Pain.jpg" alt="Christopher C. Pain">
                     <p>
                         <span class="name">Christopher C. Pain</span>
                         <span class="note">英国帝国理工学院</span>
@@ -154,7 +192,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/Fangxin%20Fang.jpg">
+                    <img src="/static/img/Fangxin%20Fang.jpg" alt="Fangxin Fang">
                     <p>
                         <span class="name">Fangxin Fang</span>
                         <span class="note">英国帝国理工学院</span>
@@ -163,14 +201,14 @@
                         描述
                     </p>
                 </div>
-
             </div>
             <hr/>
 
-            <h3 id="在读博士生"><a class="headerlink" href="#在读博士生" title="在读博士生"></a>在读博士生</h3>
+            <h3 id="在读博士生">在读博士生</h3>
             <div class="person-container">
-                <div class="person">
-                    <img src="/static/img/杨翌虢.jpg">
+
+                <div class="person" onclick="showDetails('杨翌虢')" title="点击查看详细信息">
+                    <img src="/static/img/杨翌虢.jpg" alt="杨翌虢">
                     <p>
                         <span class="name">杨翌虢</span>
                         <span class="note">20？？</span>
@@ -179,9 +217,16 @@
                         自我介绍
                     </p>
                 </div>
+                <div id="杨翌虢" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeDetails()">&times;</span>
+                        <h2>杨翌虢</h2>
+                        <a href="http://ifcbd-shu.github.io">详细介绍内容在这里。</a>
+                    </div>
+                </div>
 
-                <div class="person">
-                    <img src="/static/img/武江南.jpg">
+                <div class="person" onclick="showDetails('武江南')" title="点击查看详细信息">
+                    <img src="/static/img/武江南.jpg" alt="武江南">
                     <p>
                         <span class="name">武江南</span>
                         <span class="note">20？？</span>
@@ -191,106 +236,114 @@
                     </p>
                 </div>
 
+                <div id="武江南" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeDetails()">&times;</span>
+                        <h2>武江南</h2>
+                        <a href="http://ifcbd-shu.github.io">详细介绍内容在这里。</a>
+                    </div>
+                </div>
+
             </div>
             <hr/>
 
-            <h3 id="在读硕士生"><a class="headerlink" href="#在读硕士生" title="在读硕士生"></a>在读硕士生</h3>
+            <h3 id="在读硕士生">在读硕士生</h3>
             <div class="person-container">
                 <div class="person">
-                    <img src="/static/img/张波.jpg">
+                    <img src="/static/img/张波.jpg" alt="张波">
                     <p>
                         <span class="name">张波</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2021届</span>
                     </p>
                     <p class="description">
                         自我介绍
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/翁龙杰.jpg">
+                    <img src="/static/img/翁龙杰.jpg" alt="翁龙杰">
                     <p>
                         <span class="name">翁龙杰</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2021届</span>
                     </p>
                     <p class="description">
                         自我介绍
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/刘志涛.jpg">
+                    <img src="/static/img/刘志涛.jpg" alt="刘志涛">
                     <p>
                         <span class="name">刘志涛</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2021届</span>
                     </p>
                     <p class="description">
                         自我介绍
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/许立基.jpg">
+                    <img src="/static/img/许立基.jpg" alt="许立基">
                     <p>
                         <span class="name">许立基</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2021届</span>
                     </p>
                     <p class="description">
                         自我介绍
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/黄海旺.jpg">
+                    <img src="/static/img/黄海旺.jpg" alt="黄海旺">
                     <p>
                         <span class="name">黄海旺</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2022届</span>
                     </p>
                     <p class="description">
                         自我介绍
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/秦之屹.jpg">
+                    <img src="/static/img/秦之屹.jpg" alt="秦之屹">
                     <p>
                         <span class="name">秦之屹</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2022届</span>
                     </p>
                     <p class="description">
                         自我介绍
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/朱宇飞.jpg">
+                    <img src="/static/img/朱宇飞.jpg" alt="朱宇飞">
                     <p>
                         <span class="name">朱宇飞</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2023届</span>
                     </p>
                     <p class="description">
                         自我介绍
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/屠泽凯.jpg">
+                    <img src="/static/img/屠泽凯.jpg" alt="屠泽凯">
                     <p>
                         <span class="name">屠泽凯</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2023届</span>
                     </p>
                     <p class="description">
                         自我介绍
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/王玉波.jpg">
+                    <img src="/static/img/王玉波.jpg" alt="王玉波">
                     <p>
                         <span class="name">王玉波</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2023届</span>
                     </p>
                     <p class="description">
                         自我介绍
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/邹伟豪.jpg">
+                    <img src="/static/img/邹伟豪.jpg" alt="邹伟豪">
                     <p>
                         <span class="name">邹伟豪</span>
-                        <span class="note">20？？</span>
+                        <span class="note">2023届</span>
                     </p>
                     <p class="description">
                         自我介绍
@@ -301,7 +354,7 @@
 
             <hr/>
 
-            <h3 id="在读本科生"><a class="headerlink" href="#在读本科生" title="在读本科生"></a>在读本科生</h3>
+            <h3 id="在读本科生">在读本科生</h3>
             <ul>
                 <li>王越</li>
                 <li>徐王嘉</li>
@@ -324,10 +377,10 @@
             <!--            </div>-->
             <!--            <hr/>-->
 
-            <h3 id="已毕业硕士生"><a class="headerlink" href="#已毕业硕士生" title="已毕业硕士生"></a>已毕业硕士生</h3>
+            <h3 id="已毕业硕士生">已毕业硕士生</h3>
             <div class="person-container">
                 <div class="person">
-                    <img src="/static/img/李建敦.jpg">
+                    <img src="/static/img/李建敦.jpg" alt="李建敦">
                     <p>
                         <span class="name">李建敦</span>
                         <span class="note">20？？</span>
@@ -337,7 +390,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/刘海恩.jpg">
+                    <img src="/static/img/刘海恩.jpg" alt="刘海恩">
                     <p>
                         <span class="name">刘海恩</span>
                         <span class="note">20？？</span>
@@ -347,7 +400,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/武伟.jpg">
+                    <img src="/static/img/武伟.jpg" alt="武伟">
                     <p>
                         <span class="name">武伟</span>
                         <span class="note">20？？</span>
@@ -357,7 +410,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/朱儒康.jpg">
+                    <img src="/static/img/朱儒康.jpg" alt="朱儒康">
                     <p>
                         <span class="name">朱儒康</span>
                         <span class="note">20？？</span>
@@ -367,7 +420,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/吕博.jpg">
+                    <img src="/static/img/吕博.jpg" alt="吕博">
                     <p>
                         <span class="name">吕博</span>
                         <span class="note">20？？</span>
@@ -377,7 +430,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/李松倍.jpg">
+                    <img src="/static/img/李松倍.jpg" alt="李松倍">
                     <p>
                         <span class="name">李松倍</span>
                         <span class="note">20？？</span>
@@ -387,7 +440,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/高升.jpg">
+                    <img src="/static/img/高升.jpg" alt="高升">
                     <p>
                         <span class="name">高升</span>
                         <span class="note">20？？</span>
@@ -397,7 +450,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/杨瑒.jpg">
+                    <img src="/static/img/杨瑒.jpg" alt="杨瑒">
                     <p>
                         <span class="name">杨瑒</span>
                         <span class="note">20？？</span>
@@ -407,7 +460,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/邱为.jpg">
+                    <img src="/static/img/邱为.jpg" alt="邱为">
                     <p>
                         <span class="name">邱为</span>
                         <span class="note">20？？</span>
@@ -417,7 +470,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/孙建成.jpg">
+                    <img src="/static/img/孙建成.jpg" alt="孙建成">
                     <p>
                         <span class="name">孙建成</span>
                         <span class="note">20？？</span>
@@ -427,7 +480,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/廖世伟.jpg">
+                    <img src="/static/img/廖世伟.jpg" alt="廖世伟">
                     <p>
                         <span class="name">廖世伟</span>
                         <span class="note">20？？</span>
@@ -437,7 +490,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/曹啸鹏.jpg">
+                    <img src="/static/img/曹啸鹏.jpg" alt="曹啸鹏">
                     <p>
                         <span class="name">曹啸鹏</span>
                         <span class="note">20？？</span>
@@ -447,7 +500,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/郑徳群.jpg">
+                    <img src="/static/img/郑徳群.jpg" alt="郑徳群">
                     <p>
                         <span class="name">郑徳群</span>
                         <span class="note">20？？</span>
@@ -457,7 +510,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/陶聪.jpg">
+                    <img src="/static/img/陶聪.jpg" alt="陶聪">
                     <p>
                         <span class="name">陶聪</span>
                         <span class="note">20？？</span>
@@ -467,7 +520,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/颜宏杰.jpg">
+                    <img src="/static/img/颜宏杰.jpg" alt="颜宏杰">
                     <p>
                         <span class="name">颜宏杰</span>
                         <span class="note">20？？</span>
@@ -477,7 +530,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/雷志丹.jpg">
+                    <img src="/static/img/雷志丹.jpg" alt="雷志丹">
                     <p>
                         <span class="name">雷志丹</span>
                         <span class="note">20？？</span>
@@ -487,7 +540,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/罗娟娟.jpg">
+                    <img src="/static/img/罗娟娟.jpg" alt="罗娟娟">
                     <p>
                         <span class="name">罗娟娟</span>
                         <span class="note">20？？</span>
@@ -497,7 +550,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/郎佳林.jpg">
+                    <img src="/static/img/郎佳林.jpg" alt="郎佳林">
                     <p>
                         <span class="name">郎佳林</span>
                         <span class="note">20？？</span>
@@ -507,7 +560,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/陈玮.jpg">
+                    <img src="/static/img/陈玮.jpg" alt="陈玮">
                     <p>
                         <span class="name">陈玮</span>
                         <span class="note">20？？</span>
@@ -517,7 +570,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/周全.jpg">
+                    <img src="/static/img/周全.jpg" alt="周全">
                     <p>
                         <span class="name">周全</span>
                         <span class="note">20？？</span>
@@ -527,7 +580,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/张霞.jpg">
+                    <img src="/static/img/张霞.jpg" alt="张霞">
                     <p>
                         <span class="name">张霞</span>
                         <span class="note">20？？</span>
@@ -537,7 +590,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/常旭婷.jpg">
+                    <img src="/static/img/常旭婷.jpg" alt="常旭婷">
                     <p>
                         <span class="name">常旭婷</span>
                         <span class="note">20？？</span>
@@ -547,7 +600,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/陆佳雯.jpg">
+                    <img src="/static/img/陆佳雯.jpg" alt="陆佳雯">
                     <p>
                         <span class="name">陆佳雯</span>
                         <span class="note">20？？</span>
@@ -557,7 +610,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/王劲东.jpg">
+                    <img src="/static/img/王劲东.jpg" alt="王劲东">
                     <p>
                         <span class="name">王劲东</span>
                         <span class="note">20？？</span>
@@ -567,7 +620,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/潘凯凯.jpg">
+                    <img src="/static/img/潘凯凯.jpg" alt="潘凯凯">
                     <p>
                         <span class="name">潘凯凯</span>
                         <span class="note">20？？</span>
@@ -577,7 +630,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/孙俊五.jpg">
+                    <img src="/static/img/孙俊五.jpg" alt="孙俊五">
                     <p>
                         <span class="name">孙俊五</span>
                         <span class="note">20？？</span>
@@ -587,7 +640,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/张文杰.jpg">
+                    <img src="/static/img/张文杰.jpg" alt="张文杰">
                     <p>
                         <span class="name">张文杰</span>
                         <span class="note">20？？</span>
@@ -597,7 +650,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/邱丰.jpg">
+                    <img src="/static/img/邱丰.jpg" alt="邱丰">
                     <p>
                         <span class="name">邱丰</span>
                         <span class="note">20？？</span>
@@ -607,7 +660,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/袁雯琰.jpg">
+                    <img src="/static/img/袁雯琰.jpg" alt="袁雯琰">
                     <p>
                         <span class="name">袁雯琰</span>
                         <span class="note">20？？</span>
@@ -617,7 +670,7 @@
                     </p>
                 </div>
                 <div class="person">
-                    <img src="/static/img/龚思泉.jpg">
+                    <img src="/static/img/龚思泉.jpg" alt="龚思泉">
                     <p>
                         <span class="name">龚思泉</span>
                         <span class="note">20？？</span>
@@ -627,11 +680,10 @@
                     </p>
                 </div>
 
-
             </div>
             <hr/>
 
-            <h3 id="已毕业本科生"><a class="headerlink" href="#已毕业本科生" title="已毕业本科生"></a>已毕业本科生</h3>
+            <h3 id="已毕业本科生">已毕业本科生</h3>
             <ul>
                 <li>卢嘉轩 2020届本科生，2024年毕业，保研到清华大学</li>
                 <li>许智威 2021届本科生，2025年毕业，保研到清华大学</li>
@@ -644,11 +696,11 @@
     <!-- 底部内容 -->
     <div class="footer_wrap">
         <a href="https://ifcbd-shu.github.io/" rel="noopener noreferrer" style="text-decoration: none;" target="_blank">
-            <img src="/static/img/lib-text.png" style="width: 300px">
+            <img src="/static/img/lib-text.png" style="width: 300px" alt="实验室名称">
         </a>
         <div style="float:right;">
             <a href="https://www.shu.edu.cn/" rel="noopener noreferrer" style="text-decoration: none;" target="_blank">
-                <img src="/static/img/shu.svg" style="width: 160px">
+                <img src="/static/img/shu.svg" style="width: 160px" alt="上海大学">
             </a>
         </div>
     </div>
@@ -672,8 +724,27 @@
         });
     }
 
+ function showDetails(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeDetails(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    // 点击模态框外部关闭模态框
+    window.onclick = function (event) {
+        let modals = document.getElementsByClassName('modal');
+        for (let i = 0; i < modals.length; i++) {
+            if (event.target === modals[i]) {
+                modals[i].style.display = "none";
+            }
+        }
+    }
+
     // 调用函数
     addErrorHandling();
+
 </script>
 
 </body>
